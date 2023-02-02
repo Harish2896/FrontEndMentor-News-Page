@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Navbar = styled.div`
   display: flex;
   justify-content: space-between;
-  transition: 1s ease-out all;
   .logo {
     margin-top: 5px;
   }
