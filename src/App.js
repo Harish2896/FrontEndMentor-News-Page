@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import MainContent from "./components/Content/MainContent/MainContent";
+import NavBar from "./components/NavBar/NavBar";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./styles/GlobalStyles";
+import SubContent from "./components/Content/SubContent/SubContent";
+
+const theme = {
+  softOrange: "hsl(35, 77% , 62%)",
+  softRed: "hsl(5, 85%, 63%)",
+  offWhite: "hsl(36, 100%, 99%)",
+  darkGrayishblue: "hsl(236, 13%, 42%)",
+  grayishBlue: "#999aa5",
+  veryDarkBlue: "hsl(240, 100%, 5%)",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <main className="p-lg-5 mx-lg-5">
+        <NavBar />
+        <MainContent />
+        <SubContent />
+      </main>
+    </ThemeProvider>
   );
 }
 
